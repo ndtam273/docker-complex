@@ -47,7 +47,9 @@ class Fib extends Component {
             <div>
                 <form>
                     <label>Enter your index:</label>
-                    <input />
+                    <input 
+                       
+                    />
                     <button>Submit</button>
                 </form>
 
