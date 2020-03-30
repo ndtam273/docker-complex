@@ -14,7 +14,13 @@ after_success:
     - docker build -t tamnd/multi-nginx ./nginx
     - docker build -t tamnd/multi-server ./server
     - docker build -t tamnd/multi-worker ./worker
+    # Login into the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hub
+    - docker push tamnd/multi-client
+    - docker push tamnd/multi-nginx
+    - docker push tamnd/multi-server
+    - docker push tamnd/multi-worker
 
 
 
