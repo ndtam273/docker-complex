@@ -4,23 +4,23 @@ services:
     - docker
 
 before_install:
-    - docker build -t tamnd/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t kintama510/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true tamnd/react-test npm test
+    - docker run -e CI=true kintama510/react-test npm test
 
 after_success:
-    - docker build -t tamnd/multi-client ./client
-    - docker build -t tamnd/multi-nginx ./nginx
-    - docker build -t tamnd/multi-server ./server
-    - docker build -t tamnd/multi-worker ./worker
+    - docker build -t kintama510/multi-client ./client
+    - docker build -t kintama510/multi-nginx ./nginx
+    - docker build -t kintama510/multi-server ./server
+    - docker build -t kintama510/multi-worker ./worker
     # Login into the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hub
-    - docker push tamnd/multi-client
-    - docker push tamnd/multi-nginx
-    - docker push tamnd/multi-server
-    - docker push tamnd/multi-worker
+    - docker push kintama510/multi-client
+    - docker push kintama510/multi-nginx
+    - docker push kintama510/multi-server
+    - docker push kintama510/multi-worker
 
 
 
