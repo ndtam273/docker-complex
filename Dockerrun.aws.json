@@ -1,0 +1,26 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+           {
+               "name": "client",
+               "image": "kintama510/multi-client",
+               "hostname": "client",
+               "essential": false
+           },
+           {
+               "name": "server",
+               "image": "kintama510/multi-server",
+               "hostname": "api",
+               "essential": false
+           },
+           {  
+            "name": "worker",
+            "image": "kintama510/multi-worker",
+            "hostname": "worker",
+            "essential": false
+
+           }
+
+
+    ]
+}
