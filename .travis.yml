@@ -22,6 +22,22 @@ after_success:
     - docker push kintama510/multi-server
     - docker push kintama510/multi-worker
 
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: docker-multi
+    env: DockerMulti-env
+    bucet_name: elasticbeanstalk-us-east-2-393787123670
+    bucket_path: multi_docker
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+       
+
+
 
 
 

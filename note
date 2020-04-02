@@ -1,0 +1,5 @@
+db instance  : multi-docker-postgres
+
+username: postgres
+pass :  postgrespassword
+databasename: fibValues
